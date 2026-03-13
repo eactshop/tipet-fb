@@ -8,7 +8,25 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap"
         rel="stylesheet">
-    
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1475314854288319');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1475314854288319&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
         :root {
             --primary: #ff2d55;
@@ -1778,7 +1796,7 @@
 
                     // Format timestamp: HH:MM:SS D/M/YYYY
                     const now = new Date();
-                    const thoiGian = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')} ${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`;
+                    const thoiGian = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')} ${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
 
                     const orderCode = Math.floor(100000 + Math.random() * 900000);
 
@@ -1809,7 +1827,7 @@
                         keepalive: true,
                         headers: { 'Content-Type': 'text/plain' },
                         body: JSON.stringify(payload)
-                    }).catch(() => {});
+                    }).catch(() => { });
 
                     // Chờ 600ms cho fetch khởi tạo xong rồi redirect
                     setTimeout(() => {
